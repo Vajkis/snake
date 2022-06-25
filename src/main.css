@@ -1,13 +1,12 @@
 body{
   background: #4c4d4d;
-  height: 98vh
 }
 
 main{
   position: relative;
-  top: 50%;
+  top: 150px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
 
   background: #2e2f2f;
   border: solid 3px #686b6b
