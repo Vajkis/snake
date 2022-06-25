@@ -9,8 +9,8 @@ main{
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: calc(25px * 74);
-  height: calc(25px * 35);
+  width: calc(25px * 30);
+  height: calc(25px * 20);
   background: #2e2f2f;
   border: solid 3px #686b6b
 }
