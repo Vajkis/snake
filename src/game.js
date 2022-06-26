@@ -247,4 +247,4 @@ app.update.mainData = () => {
 app.start()
 
 window.addEventListener('click', app.update.snakeData)
-window.addEventListener('ontouchstart', app.update.snakeData)
+window.addEventListener('touch', app.update.snakeData)
