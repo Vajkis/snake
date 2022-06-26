@@ -7,7 +7,8 @@ mainEl.style.width = `calc(25px * ${columns})`
 const app = {
   data: {},
   reset: {},
-  render: {}
+  render: {},
+  update: {}
 }
 
 app.reset.mainData = () => {
@@ -178,4 +179,72 @@ app.start = () => {
   app.render.window()
 }
 
+app.update.snakeData = () => {
+  const x = app.data.snake[0].x
+  const y = app.data.snake[0].y
+
+  switch (app.data.snake[0].direction) {
+    case 'top':
+      if(app.data.main[x][y-1] === 0){
+        // move code here
+      } else if(app.data.main[x][y-1] === 6){
+        // have food code here
+      } else{
+        // stop code here
+      }
+      break
+
+    case 'right':
+      if(app.data.main[x+1][y] === 0){
+        app.data.snake.unshift({
+          direction: 'right',
+          x: x+1,
+          y: y
+        })
+
+      app.update.mainData()
+
+      } else if(app.data.main[x+1][y] === 6){
+        // have food code here
+      } else{
+        // stop code here
+      }
+      break
+
+    case 'bottom':
+      if(app.data.main[x][y+1] === 0){
+        // move code here
+      } else if(app.data.main[x][y+1] === 6){
+        // have food code here
+      } else{
+        // stop code here
+      }
+      break
+
+    case 'lef':
+      if(app.data.main[x-1][y] === 0){
+        // move code here
+      } else if(app.data.main[x-1][y] === 6){
+        // have food code here
+      } else{
+        // stop code here
+      }
+      break
+
+  }
+}
+
+app.update.mainData = () => {
+  const {x, y} = app.data.snake.pop()
+
+  app.data.main[x][y] = 0
+  console.log('x:', x, 'y:', y)
+  console.log(app.data.main)
+  app.render.snakeData()
+  app.render.window()
+}
+
 app.start()
+
+window.addEventListener('click', app.update.snakeData)
+window.addEventListener('ontouchstart', app.update.snakeData)

@@ -13,43 +13,49 @@ main{
 }
 
 .row{
-  display: flex
+  height: 25px
 }
 
-.tail{
+.tail, .headTop, .headRight, .headBottom, .headLeft, .tailTop, .tailRight, .tailBottom, .tailLeft{
+  display: inline-block;
   width: 23px;
   height: 23px;
-  border: solid 1px #2e2f2f;
-  background: #adff2f
-}
-
-.headRight{
-  width: 23px;
-  height: 23px;
-  border: solid 1px #2e2f2f;
+  margin: 1px;
   background: #adff2f;
+  border-radius: 20%
+}
+
+.headTop, .tailBottom{
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%
+}
+
+.headRight , .tailLeft{
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%
 }
 
-.tailRight{
-  width: 23px;
-  height: 23px;
-  border: solid 1px #2e2f2f;
-  background: #adff2f;
+.headBottom, .tailTop{
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%
+}
+
+.headLeft, .tailRight{
   border-top-left-radius: 50%;
   border-bottom-left-radius: 50%
 }
 
 .tile{
+  display: inline-block;
   width: 25px;
   height: 25px
 }
 
 .food{
+  display: inline-block;
   width: 19px;
   height: 19px;
-  border: solid 3px #2e2f2f;
+  margin: 3px;
   background: #ff9100;
   border-radius: 50%
 }
